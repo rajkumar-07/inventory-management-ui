@@ -1,0 +1,90 @@
+/* styles.css */
+
+body {
+    font-family: 'Comfortaa', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(197, 219, 197);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    border: 1px solid grey;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .table-container {
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid grey;
+    border-radius: 15%;
+  }
+  
+  .table-container th,
+  .table-container td {
+    border: 1px solid grey;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .table-container th {
+    font-weight: bold;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .input-field {
+    border: 1px solid grey;
+    
+    padding: 25px;
+    height: 100%;
+  }
+  
+  .add-button,
+  .remove-button {
+    background-color: lightgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-button:hover {
+    background-color: darkgreen;
+  }
+  
+  .remove-button {
+    background-color: lightcoral;
+  }
+  
+  .remove-button:hover {
+    background-color: darkred;
+  }
+  

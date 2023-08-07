@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import "./addproducts.css";
 
 function AddProducts() {
   const [inputFields, setInputFields] = useState([
@@ -7,7 +8,7 @@ function AddProducts() {
       description: "",
       quantity: 0,
       price: 0.0,
-      admin:true
+      admin: true
     },
   ]);
 
@@ -19,7 +20,7 @@ function AddProducts() {
         description: "",
         quantity: 0,
         price: 0.0,
-        admin:true
+        admin: true
       },
     ]);
   };
@@ -54,19 +55,18 @@ function AddProducts() {
   };
 
   return (
-    <div className="">
-      <center>
-      <p>Add Products to the Inventory</p>
-      <div className="">
-        <div className="">
-          <table className="">
+    <div className="container">
+      <div className="center">
+        <p className="heading">Add Products to the Inventory</p>
+        <div className="table-container">
+          <table>
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>Action</th>
+                {inputFields.length > 1 && <th>Action</th>}
               </tr>
             </thead>
             <tbody>
@@ -80,7 +80,7 @@ function AddProducts() {
                         onChange={(evnt) => handleChange(index, evnt)}
                         value={name}
                         name="name"
-                        className=""
+                        className="input-field"
                         placeholder="Name"
                         required
                       />
@@ -91,7 +91,7 @@ function AddProducts() {
                         onChange={(evnt) => handleChange(index, evnt)}
                         value={description}
                         name="description"
-                        className=""
+                        className="input-field"
                         placeholder="Description"
                         required
                       />
@@ -102,7 +102,7 @@ function AddProducts() {
                         onChange={(evnt) => handleChange(index, evnt)}
                         value={quantity}
                         name="quantity"
-                        className=""
+                        className="input-field"
                         placeholder="Quantity"
                         required
                       />
@@ -114,21 +114,19 @@ function AddProducts() {
                         onChange={(evnt) => handleChange(index, evnt)}
                         value={price}
                         name="price"
-                        className=""
+                        className="input-field"
                         placeholder="Price"
                         required
                       />
                     </td>
                     <td>
-                      {inputFields.length !== 1 ? (
+                      {inputFields.length !== 1 && (
                         <button
-                          className=""
+                          className="remove-button"
                           onClick={() => removeInputFields(index)}
                         >
                           Remove
                         </button>
-                      ) : (
-                        ""
                       )}
                     </td>
                   </tr>
@@ -136,25 +134,18 @@ function AddProducts() {
               })}
             </tbody>
           </table>
-          <div className="">
-            <div className="">
-              <button
-                className=""
-                onClick={addInputField}
-              >
-                Add New
-              </button>
+          <div className="button-container">
+            <button className="add-button" onClick={addInputField}>
+              Add New
+            </button>
 
-              <button type="button" className="btn btn-primary" onClick={handleSubmit}>
-                  Submit
-                </button>
-              
-            </div>
+            <button type="button" className="add-button" onClick={handleSubmit}>
+              Submit
+            </button>
           </div>
         </div>
         <div className=""></div>
       </div>
-    </center>
     </div>
   );
 }
