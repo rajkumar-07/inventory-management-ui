@@ -7,6 +7,7 @@ function AddProducts() {
       description: "",
       quantity: 0,
       price: 0.0,
+      admin:true
     },
   ]);
 
@@ -18,6 +19,7 @@ function AddProducts() {
         description: "",
         quantity: 0,
         price: 0.0,
+        admin:true
       },
     ]);
   };
@@ -33,6 +35,22 @@ function AddProducts() {
     const list = [...inputFields];
     list[index][name] = value;
     setInputFields(list);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:8080/add-products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputFields),
+      });
+    } catch (error) {
+      console.error("Error occurred while submitting the form:", error);
+    }
   };
 
   return (
@@ -127,7 +145,7 @@ function AddProducts() {
                 Add New
               </button>
 
-              <button type="button" className="btn btn-primary" >
+              <button type="button" className="btn btn-primary" onClick={handleSubmit}>
                   Submit
                 </button>
               
