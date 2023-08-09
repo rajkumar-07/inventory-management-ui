@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./addproducts.css";
 
 function AddProducts() {
-  const [inputFields, setInputFields] = useState([
+  const initialState=[
     {
       name: "",
       description: "",
@@ -10,8 +10,8 @@ function AddProducts() {
       price: 0.0,
       admin: true
     },
-  ]);
-
+  ];
+  const [inputFields, setInputFields] = useState(initialState);
   const addInputField = () => {
     setInputFields([
       ...inputFields,
@@ -49,6 +49,9 @@ function AddProducts() {
         },
         body: JSON.stringify(inputFields),
       });
+      if(response.ok){
+        setInputFields(initialState);
+      }
     } catch (error) {
       console.error("Error occurred while submitting the form:", error);
     }
