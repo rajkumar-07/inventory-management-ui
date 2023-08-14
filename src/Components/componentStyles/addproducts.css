@@ -1,4 +1,4 @@
-/* styles.css */
+styles.css
 
 body {
     font-family: 'Comfortaa', Tahoma, Geneva, Verdana, sans-serif;
@@ -58,12 +58,12 @@ body {
     justify-content: space-between;
   }
   
-  .input-field {
+  /* .input-field {
     border: 1px solid grey;
     
     padding: 25px;
     height: 100%;
-  }
+  } */
   
   .add-button,
   .remove-button {
