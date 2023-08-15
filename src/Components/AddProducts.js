@@ -1,27 +1,16 @@
 import React, { useState } from "react";
 import "./componentStyles/addproducts.css";
-
+import { cloneDeep } from "lodash";
+import productJSON from "../Constants/CommonConstants";
 function AddProducts() {
   const initialState=[
-    {
-      name: "",
-      description: "",
-      quantity: 0,
-      price: 0.0,
-      admin: true
-    },
+    cloneDeep(productJSON),
   ];
   const [inputFields, setInputFields] = useState(initialState);
   const addInputField = () => {
     setInputFields([
       ...inputFields,
-      {
-        name: "",
-        description: "",
-        quantity: 0,
-        price: 0.0,
-        admin: true
-      },
+      cloneDeep(productJSON),
     ]);
   };
 
@@ -50,7 +39,7 @@ function AddProducts() {
         body: JSON.stringify(inputFields),
       });
       if(response.ok){
-        setInputFields(initialState);
+        setInputFields([cloneDeep(productJSON)]);
       }
     } catch (error) {
       console.error("Error occurred while submitting the form:", error);
