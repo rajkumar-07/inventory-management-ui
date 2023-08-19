@@ -76,11 +76,7 @@ function EditProduct(){
         
   const [products, setProducts] = useState(cloneDeep(tempArray));
 
-  const handleDataChange = (index, property, newValue) => {
-    const updatedProducts = [...products];
-    updatedProducts[index][property] = newValue;
-    setProducts(updatedProducts);
-  };
+
    return (
     <div>
       <table>
@@ -97,93 +93,32 @@ function EditProduct(){
             <tr key={index}>
               <td>
                 <input
-                  type="text"
                   value={data.name}
-                  onChange={(e) => handleDataChange(index, "name", e.target.value)}
+                  readonly
                 />
               </td>
               <td>
                 <input
-                  type="text"
                   value={data.description}
-                  onChange={(e) =>
-                    handleDataChange(index, "description", e.target.value)
-                  }
+                  readonly
                 />
               </td>
               <td>
                 <input
-                  type="number"
                   value={data.quantity}
-                  onChange={(e) =>
-                    handleDataChange(index, "quantity", parseInt(e.target.value))
-                  }
+                  readonly
                 />
               </td>
               <td>
                 <input
-                  type="number"
-                  step="0.01"
                   value={data.price}
-                  onChange={(e) =>
-                    handleDataChange(index, "price", parseFloat(e.target.value))
-                  }
-                />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-  return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Quantity</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((data, index) => (
-            <tr key={index}>
-              <td>
-                <input
-                  type="text"
-                  value={data.name}
-                  onChange={(e) => handleDataChange(index, "name", e.target.value)}
+                  readonly
                 />
               </td>
               <td>
-                <input
-                  type="text"
-                  value={data.description}
-                  onChange={(e) =>
-                    handleDataChange(index, "description", e.target.value)
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  value={data.quantity}
-                  onChange={(e) =>
-                    handleDataChange(index, "quantity", parseInt(e.target.value))
-                  }
-                />
-              </td>
-              <td>
-                <input
-                  type="number"
-                  step="0.01"
-                  value={data.price}
-                  onChange={(e) =>
-                    handleDataChange(index, "price", parseFloat(e.target.value))
-                  }
-                />
+                <button>
+                  Edit
+                </button>
               </td>
             </tr>
           ))}
