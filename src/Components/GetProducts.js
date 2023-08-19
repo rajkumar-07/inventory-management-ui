@@ -1,9 +1,10 @@
 import { cloneDeep } from "lodash";
 import { useState } from "react";
-function EditProduct(){
+function GetProducts(){
 
     const tempArray=[
         {
+          id:1,
           name: "Product 1",
           description: "Description for Product 1",
           quantity: 5,
@@ -11,6 +12,7 @@ function EditProduct(){
           
         },
         {
+          id:2,
           name: "Product 2",
           description: "Description for Product 2",
           quantity: 8,
@@ -18,6 +20,7 @@ function EditProduct(){
           
         },
         {
+          id:3,
           name: "Product 3",
           description: "Description for Product 3",
           quantity: 12,
@@ -25,6 +28,7 @@ function EditProduct(){
           
         },
         {
+          id:4,
           name: "Product 4",
           description: "Description for Product 4",
           quantity: 2,
@@ -32,13 +36,14 @@ function EditProduct(){
           
         },
         {
+          id:5,
           name: "Product 5",
           description: "Description for Product 5",
           quantity: 20,
           price: 5.99,
-          
         },
         {
+          id:6,
           name: "Product 6",
           description: "Description for Product 6",
           quantity: 15,
@@ -46,6 +51,7 @@ function EditProduct(){
           
         },
         {
+          id:7,
           name: "Product 7",
           description: "Description for Product 7",
           quantity: 10,
@@ -53,13 +59,14 @@ function EditProduct(){
           
         },
         {
+          id:8,
           name: "Product 8",
           description: "Description for Product 8",
           quantity: 3,
           price: 29.99,
-          
         },
         {
+          id:9,
           name: "Product 9",
           description: "Description for Product 9",
           quantity: 18,
@@ -67,6 +74,7 @@ function EditProduct(){
           
         },
         {
+          id:10,
           name: "Product 10",
           description: "Description for Product 10",
           quantity: 6,
@@ -76,6 +84,9 @@ function EditProduct(){
         
   const [products, setProducts] = useState(cloneDeep(tempArray));
 
+  function handleEdit(){
+
+  }
 
    return (
     <div>
@@ -116,7 +127,7 @@ function EditProduct(){
                 />
               </td>
               <td>
-                <button>
+                <button onClick={handleEdit(data)}>
                   Edit
                 </button>
               </td>
@@ -129,4 +140,4 @@ function EditProduct(){
 }
 
 
-export default EditProduct;
+export default GetProducts;
