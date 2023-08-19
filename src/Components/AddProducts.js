@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./componentStyles/addproducts.css";
 import { cloneDeep } from "lodash";
 import productJSON from "../Constants/CommonConstants";
+import post from "../Actions/APIFunctions";
+
 function AddProducts() {
   const initialState=[
     cloneDeep(productJSON),
@@ -30,20 +32,10 @@ function AddProducts() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    try {
-      const response = await fetch("http://localhost:8080/add-products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inputFields),
-      });
+      const response = await post("http://localhost:8080/add-products",inputFields);
       if(response.ok){
         setInputFields([cloneDeep(productJSON)]);
       }
-    } catch (error) {
-      console.error("Error occurred while submitting the form:", error);
-    }
   };
 
   return (

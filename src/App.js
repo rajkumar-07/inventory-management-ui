@@ -7,11 +7,11 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path ="/add-products" element={<AddProducts/>}/>
-      <Route path="/product-list" element={<ProductList/>}/>
-      <Route path="/view-products" element={<GetProducts/>}/>
+        <Route path="/add-products" element={<AddProducts />} />
+        <Route path="/product-list" element={<ProductList />} />
+        <Route path="/view-products" element={<GetProducts />} />
       </Routes>
-      </Router>
+    </Router>
   );
 }
 
