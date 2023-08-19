@@ -1,6 +1,6 @@
 import React from 'react';
-import "./componentStyles/productcard.css";
-import tempProduct from "../Assets/Product.jpg";
+import "../../componentStyles/productcard.css";
+import tempProduct from "../../Assets/Product.jpg";
 
 function ProductCard(props) {
     return (

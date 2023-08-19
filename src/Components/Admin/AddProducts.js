@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "./componentStyles/addproducts.css";
+import "../../componentStyles/addproducts.css";
 import { cloneDeep } from "lodash";
-import productJSON from "../Constants/CommonConstants";
-import post from "../Actions/APIFunctions";
-
+import productJSON from "../../Constants/CommonConstants"
+import post from "../../Actions/APIFunctions"
 function AddProducts() {
   const initialState=[
     cloneDeep(productJSON),
