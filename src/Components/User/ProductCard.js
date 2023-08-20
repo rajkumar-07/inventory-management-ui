@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "../../componentStyles/productcard.css";
 import tempProduct from "../../Assets/Product.jpg";
 
